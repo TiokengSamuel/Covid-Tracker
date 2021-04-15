@@ -8,6 +8,7 @@ import {
 
 function App() {
   const [countries, setCountries] = useState([]);
+  const [country, setCountry] = useState('worldwide');
 
   useEffect(() => {
 
@@ -36,7 +37,8 @@ function App() {
         <FormControl className="app__dropdown">
           <Select
           variant="outlined"
-          value="abc"
+          value={country}
+
           >
             <MenuItem value="worldwide">Worldwide</MenuItem>
             {
