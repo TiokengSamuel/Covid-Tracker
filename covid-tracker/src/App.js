@@ -5,6 +5,7 @@ import {
   FormControl,
   Select
 } from "@material-ui/core"
+import InfoBox from './InfoBox';
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -57,7 +58,12 @@ function App() {
       </div>
 
       <div className="app__stats">
-        
+        <InfoBox title="Coronavirus Cases" cases={123} total={2000}/>
+
+        <InfoBox title="Recovered" cases={123} total={2000}/>
+
+        <InfoBox title="Deaths" cases={123} total={2000}/>
+
       </div>
       
     </div>
