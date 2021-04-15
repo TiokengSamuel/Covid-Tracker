@@ -12,6 +12,7 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('worldwide');
   const [countryInfo, setCountryInfo] = useState({});
+  const [tableData, setTabaleData] = useState([]);
 
   //All countries useEffect
   useEffect(() => {
@@ -37,6 +38,7 @@ function App() {
           }
         ));
 
+        setTableData(data);
         setCountries(countries)
       }))
     
@@ -55,8 +57,10 @@ function App() {
   await fetch(url)
   .then(response => response.json())
   .then(data => {
+
     setCountry(countryCode);
      setCountryInfo(data);
+     setTableData(data);
   })
   }
   console.log("Country Info >>>", country);
@@ -102,8 +106,9 @@ function App() {
         <CardContent>
             <h3>Live Cases by Country</h3>
             {/* Table */} 
+            <Table countries={tableData}/>
 
-            <h3>Worldwide new cases</h3>
+            <h3>Worldwide cases</h3>
             {/* Graph */}
         </CardContent>
         
