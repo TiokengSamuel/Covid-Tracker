@@ -7,9 +7,7 @@ import {
 } from "@material-ui/core"
 
 function App() {
-  const [countries, setCountries] = useState([
-    'USA', 'UK'
-  ]);
+  const [countries, setCountries] = useState([]);
 
   useEffect(() => {
 
@@ -24,8 +22,11 @@ function App() {
             value: country.countryInfo.iso2
           }
         ));
+
+        setCountries(countries)
       }))
-     
+    
+      getCountriesData();
   }, [])
 
   return (
@@ -37,9 +38,10 @@ function App() {
           variant="outlined"
           value="abc"
           >
+            <MenuItem value="worldwide">Worldwide</MenuItem>
             {
               countries.map((country) => (
-                <MenuItem value={country}>{country}</MenuItem>
+                <MenuItem value={country.value}>{country.name}</MenuItem>
               ))
             }
           </Select>
