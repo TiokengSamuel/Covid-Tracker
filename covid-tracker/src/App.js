@@ -5,6 +5,7 @@ import { MenuItem, FormControl, Select } from "@material-ui/core"
 import InfoBox from './InfoBox';
 import Map from './Map';
 import Table from './Table';
+import { sortData } from './util';
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -36,6 +37,7 @@ function App() {
           }
         ));
 
+        const sortedData = sortData(data)
         setTableData(data);
         setCountries(countries);
       }))
