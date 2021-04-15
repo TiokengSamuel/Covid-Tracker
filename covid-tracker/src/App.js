@@ -39,7 +39,7 @@ function App() {
     setCountry(countryCode);
 
     const url =
-     countryCode == 'worldwide' ? 'https://disease.sh/v3/covid-19/all'
+     countryCode == 'worldwide' ? "https://disease.sh/v3/covid-19/all"
     : `https://disease.sh/v3/covid-19/countries/${countryCode}`
   
   await fetch(url)
@@ -48,6 +48,7 @@ function App() {
 
   })
   }
+  console.log("Country Info >>>", country);
 
   return (
     <div className="app">
