@@ -38,7 +38,7 @@ function App() {
         ));
 
         const sortedData = sortData(data)
-        setTableData(data);
+        setTableData(sortedData);
         setCountries(countries);
       }))
     
@@ -109,7 +109,9 @@ function App() {
             <Table countries={tableData}/>
 
             <h3>Worldwide cases</h3>
+            
             {/* Graph */}
+            <LineGraph/>
         </CardContent>
         
       </Card>
