@@ -13,6 +13,16 @@ function App() {
   const [country, setCountry] = useState('worldwide');
   const [countryInfo, setCountryInfo] = useState({});
 
+  //All countries useEffect
+  useEffect(() => {
+    fetch("https://disease.sh/v3/covid-19/all")
+    .then(response => response.json())
+    .then(data => {
+      setCountryInfo(data);
+    })
+  }, [])
+
+  //Particular country useEffect
   useEffect(() => {
 
     const getCountriesData = async () => (
