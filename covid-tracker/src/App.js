@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Card, CardContent } from '@material-ui/core'
-
-import {
-  MenuItem, FormControl, Select
-} from "@material-ui/core"
+import { MenuItem, FormControl, Select } from "@material-ui/core"
 import InfoBox from './InfoBox';
 import Map from './Map';
+import Table from './Table';
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('worldwide');
   const [countryInfo, setCountryInfo] = useState({});
-  const [tableData, setTabaleData] = useState([]);
+  const [tableData, setTableData] = useState([]);
 
   //All countries useEffect
   useEffect(() => {
@@ -39,7 +37,7 @@ function App() {
         ));
 
         setTableData(data);
-        setCountries(countries)
+        setCountries(countries);
       }))
     
       getCountriesData();
