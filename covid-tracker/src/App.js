@@ -30,6 +30,12 @@ function App() {
       getCountriesData();
   }, [])
 
+  const onCountryChange = async(event) => {
+    const countryCode = event.target.value;
+
+    setCountry(countryCode);
+  }
+
   return (
     <div className="app">
       <div className="app__header">
@@ -38,7 +44,7 @@ function App() {
           <Select
           variant="outlined"
           value={country}
-
+          onChange={onCountryChange}
           >
             <MenuItem value="worldwide">Worldwide</MenuItem>
             {
@@ -48,6 +54,10 @@ function App() {
             }
           </Select>
         </FormControl>
+      </div>
+
+      <div className="app__stats">
+        
       </div>
       
     </div>
