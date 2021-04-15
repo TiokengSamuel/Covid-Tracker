@@ -11,7 +11,7 @@ import Map from './Map';
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('worldwide');
-  const [countryInfo, setCountryInfo] = useState();
+  const [countryInfo, setCountryInfo] = useState({});
 
   useEffect(() => {
 
@@ -45,7 +45,8 @@ function App() {
   await fetch(url)
   .then(response => response.json())
   .then(data => {
-
+    setCountry(countryCode);
+     setCountryInfo(data);
   })
   }
   console.log("Country Info >>>", country);
