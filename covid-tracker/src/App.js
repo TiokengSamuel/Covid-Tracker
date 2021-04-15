@@ -6,6 +6,7 @@ import {
   Select
 } from "@material-ui/core"
 import InfoBox from './InfoBox';
+import Map from './Map';
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -39,6 +40,8 @@ function App() {
 
   return (
     <div className="app">
+
+      {/* Header */}
       <div className="app__header">
         <h1>COVID-19 TRACKER</h1>
         <FormControl className="app__dropdown">
@@ -66,6 +69,10 @@ function App() {
 
       </div>
       
+
+
+      {/* Map */}
+      <Map/>
     </div>
   );
 }

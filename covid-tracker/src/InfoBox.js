@@ -1,9 +1,9 @@
 import React from 'react'
 import { Card, CardContent, Typography} from '@material-ui/core'
 
-function infoBox({title, cases, total}) {
+function InfoBox({title, cases, total}) {
     return (
-        
+        <div>
             <Card className="infoBox">
                 <CardContent>
                     <Typography className="infoBox__title" color="textSecondary">
@@ -18,8 +18,8 @@ function infoBox({title, cases, total}) {
 
                 </CardContent>
             </Card>
-        
+        </div>
     )
 }
 
-export default infoBox
+export default InfoBox
