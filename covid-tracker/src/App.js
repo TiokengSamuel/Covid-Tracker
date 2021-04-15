@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import { Card, CardContent } from '@material-ui/core'
+
 import {
-  MenuItem,
-  FormControl,
-  Select
+  MenuItem, FormControl, Select
 } from "@material-ui/core"
 import InfoBox from './InfoBox';
 import Map from './Map';
@@ -41,7 +41,8 @@ function App() {
   return (
     <div className="app">
 
-      {/* Header */}
+      <div className="app__left">
+        {/* Header */}
       <div className="app__header">
         <h1>COVID-19 TRACKER</h1>
         <FormControl className="app__dropdown">
@@ -73,6 +74,18 @@ function App() {
 
       {/* Map */}
       <Map/>
+      </div>
+      <Card className="app__right">
+        <CardContent>
+            <h3>Live Cases by Country</h3>
+            {/* Table */} 
+
+            <h3>Worldwide new cases</h3>
+            {/* Graph */}
+        </CardContent>
+        
+      </Card>
+      
     </div>
   );
 }
