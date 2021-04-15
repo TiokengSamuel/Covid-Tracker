@@ -36,6 +36,10 @@ function App() {
     const countryCode = event.target.value;
 
     setCountry(countryCode);
+
+    const url =
+     countryCode == 'worldwide' ? 'https://disease.sh/v3/covid-19/all'
+    : `https://disease.sh/v3/covid-19/countries/${countryCode}`
   }
 
   return (
