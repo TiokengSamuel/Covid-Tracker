@@ -111,7 +111,7 @@ function App() {
 
             <h3>Worldwide cases</h3>
             
-            {/* Graph */}
+            {/* Graphql */}
             <LineGraph/>
         </CardContent>
         
